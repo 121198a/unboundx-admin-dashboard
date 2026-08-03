@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+/* =====================================================================
+   UNBOUNDX DESIGN TOKENS
+   ===================================================================== */
+:root {
+  /* Page + surface backgrounds */
+  --ux-bg: #F7F8FC;
+  --ux-card: #FFFFFF;
+
+  /* Text hierarchy */
+  --ux-text: #1D2939;
+  --ux-text-muted: #667085;
+
+  /* Borders / dividers */
+  --ux-border: #E7EAF0;
+
+  /* Brand */
+  --ux-purple: #5a14dc;
+  --ux-purple-dark: #8b30e6;
+  --ux-orange: #FF7A00;
+
+  /* Active sidebar item: smooth purple gradient */
+  --ux-active-bg: linear-gradient(135deg, #B026E0, #7C1FD6);
+  /* Header accent strip: thin orange -> purple divider */
+  --ux-gradient: linear-gradient(90deg, #FF7A00 0%, #dc2aec 40%, #29c1ea 100%);
+  /* Wordmark ("UNBOUND X"): purple/magenta only, a bare hint of warmth at the start */
+  --ux-wordmark-gradient: linear-gradient(90deg, #C026D3 0%, #A000C8 30%, #7C1FD6 100%);
+
+  /* Radius scale */
+  --ux-radius-card: 18px;
+  --ux-radius-input: 14px;
+  --ux-radius-button: 12px;
+  --ux-radius-active: 14px;
+
+  /* Layout */
+  --ux-topbar-height: 72px;
+  --ux-sidebar-width: 272px;
+}
+
+html {
+  font-size: 17px;
+}
+
+html,
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background-color: var(--ux-bg);
+  color: var(--ux-text);
+}
+
+
+.ux-brand-gradient-hover {
+  background: linear-gradient(
+    90deg,
+    #ff8a1d 0%,
+    var(--ux-purple-dark) 50%,
+    #0284c7 100%
+  );
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px rgba(160, 0, 200, 0.25);
+}
+
+.ux-brand-gradient-hover:hover {
+  background: linear-gradient(
+    90deg,
+    #ff8a1d 0%,
+    var(--ux-purple-dark) 50%,
+    #0284c7 100%
+  );
+    filter: brightness(1.08);
+    transform: translateY(-1px);
+    box-shadow: 0 14px 28px rgba(160, 0, 200, 0.32);
+}
+
+/* Gradient wordmark text ("UnboundX") */
+.ux-gradient-text {
+  @apply bg-linear-to-r from-orange-500 via-violet-600 to-sky-500 bg-clip-text text-transparent;
+}
+
+/* Gradient ring used around the logo + user avatar circle. */
+.ux-gradient-ring {
+  background: linear-gradient(#f2a965, #dd80f2 50%, #31b4f0);
+}
+
+.ux-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #d1d5db transparent;
+}
+.ux-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.ux-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.ux-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #d1d5db;
+  border-radius: 9999px;
+}
+.ux-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #b3b8c2;
+}
+
+button,
+a,
+[role='button'],
+select,
+input[type='checkbox'],
+input[type='radio'] {
+  cursor: pointer;
+}
+button:disabled,
+[role='button'][aria-disabled='true'] {
+  cursor: not-allowed;
+}
