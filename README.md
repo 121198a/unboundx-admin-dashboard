@@ -74,7 +74,7 @@ cp .env.example .env
 npm run dev
 ```
 
-The app will be available at **http://localhost:5173**.
+The app will be available at **https://unboundx-admin-dashboard.vercel.app/login**.
 
 Build for production:
 
